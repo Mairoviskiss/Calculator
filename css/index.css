@@ -2,29 +2,38 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: black;
+    background-color: rgb(67, 65, 65);
 }
 
 #container {
     width: 700px;
-    background-color: rgb(6, 53, 26);
+    background-color: rgb(1, 9, 5);
     height: 700px;
     margin: 500px;
-    padding-top: 100px;
-
+    padding-top: 50px;
     display: grid;
     justify-content: center;
     align-items: center;
-  
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    gap: 2px;
 }
 
 button {
     color: white;
+    font-size: 1em;
+    font-weight: initial;
+    margin: 2px;
+    border-radius: 50%;
+    border: none;
+
 }
 
-#display {
+.operator, .equals {
+    background-color: orange;
+}
+
+.clear, .percent {
     background-color: grey;
 }
 
@@ -32,6 +41,17 @@ button {
 
 }
 
-.clear {
-    width: ;
+#display {
+    background-color: grey;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 5.5rem;
+    font-weight: initial;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    text-shadow: 1.3px 1.3px rgb(42, 41, 41);
 }
