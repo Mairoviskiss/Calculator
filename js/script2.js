@@ -78,7 +78,7 @@ class Calculator {
         } else {
             return integerDisplay;
         }
-    
+
     }
     
     updateDisplay() {
@@ -90,6 +90,11 @@ class Calculator {
         this.previousOperandText.innerText='';
     }
     
+    /* ================== NOT WORKING ======================================
+    if (this.currentOperand.innerText === Infinity) {
+        return this.currentOperandText.innerText='err';
+    }    
+*/
     } /*end of updateDisplay() */
     
     } /*end of class calculator*/
