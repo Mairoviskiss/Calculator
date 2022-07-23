@@ -1,9 +1,9 @@
-const numbers = document.querySelectorAll('.operand');
-const operators = document.querySelectorAll('.operator');
-const equalsButton = document.querySelector('.equals');
-const clearButton = document.querySelector('.clear');
-const deleteButton = document.querySelector('.delete')
-const PreviousOperand_text = document.querySelector('.previousOperand');
+const numbers = document.querySelectorAll('operand');
+const operators = document.querySelectorAll('operator');
+const equalsButton = document.querySelector('equals');
+const clearButton = document.querySelector('clear');
+const deleteButton = document.querySelector('delete')
+const PreviousOperand_text = document.querySelector('previousOperand');
 const CurrentOperand_text = document.querySelector('currentOperand');
 
 class calculator {
@@ -142,6 +142,6 @@ clearButton;addEventListener('click', button => {
 });
 
 deleteButton.addEventListener('click', button => {
-    calculator.delete();
+    calculator.deletee();
     calculator.updateDisplay();
 });
