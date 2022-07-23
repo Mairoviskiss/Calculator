@@ -40,7 +40,7 @@
 }
 
 #container > button:hover {
-    background-color: blue;
+    background-color: rgb(112, 112, 117);
 }
 
 #container > .operator, .equals {
@@ -50,7 +50,6 @@
 #container > .clear, .percent, .delete {
     background-color: grey;
 }
-
 
 
 #display {
@@ -65,18 +64,15 @@
     text-align: center;
     padding: 5px;
     margin: 5px;
-    text-shadow: 1.3px 1.3px rgb(42, 41, 41);
     word-wrap: break-word;
     word-break: break-all;
     height: 100px;  
 }
 
 .previousOperand {
-    color: rgba(56, 52, 52, 0.75);
     font-size: 1.5rem;
 }
 
 .currentOperand {
-    color: rgb(14, 10, 18);
     font-size: 2.5rem;
 }
