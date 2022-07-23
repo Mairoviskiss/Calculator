@@ -1,13 +1,4 @@
-/*const button = document.querySelectorAll('button');*/
-const numbers = document.querySelectorAll('operand');
-const operators = document.querySelectorAll('operator');
-const equalsButton = document.querySelector('equals');
-const clearButton = document.querySelector('clear');
-const deleteButton = document.querySelector('delete')
-const PreviousOperand_text = document.querySelector('previousOperand');
-const CurrentOperand_text = document.querySelector('currentOperand');
-
-class calculator {
+class Calculator {
     constructor(PreviousOperand_text, CurrentOperand_text) {
         this.PreviousOperand_text = PreviousOperand_text;
         this.CurrentOperand_text = CurrentOperand_text;
@@ -19,9 +10,7 @@ class calculator {
     this.currentOperation = '';
     this.previousOperation = '';
     this.operation = undefined;
-    console.log('U clicked clear');
-
-}
+  }
 
  deletee() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
@@ -29,30 +18,27 @@ class calculator {
 }
 
 appendNumber(number) {
-    if (number == '.' && this.currentOperand.includes('.')) {
+    if (number === '.' && this.currentOperand.includes('.')) {
         return 
     }
     this.currentOperand = this.currentOperand.toString() + number.toString();
 }
 
- chooseOperation(operation) {
+chooseOperation(operation) {
      if (this.currentOperand === '') {
      return 
     }
      if (this.previousOperand !== '') {
-            this.compute;
+            this.compute();
         }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = ''; 
     
-    }
-
-     
+}
 
 compute() {
-    let mathOperations;
-
+    let result;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) || isNaN(current)) {
@@ -60,48 +46,43 @@ compute() {
     }
     switch (this.operation) {
         case '+':
-            mathOperations = prev + current;
+            result = prev + current;
             break;
         case '-':
-            mathOperations = prev - current;
+            result = prev - current;
             break;
         case '*':
-            mathOperations = prev * current;
+            result = prev * current;
             break;
         case '/':
-            mathOperations = prev / current;
+            result = prev / current;
             break;
         default:
             return                
     }
-    this.currentOperand = mathOperations;
+    this.currentOperand = result;
     this.operation = undefined;
     this.previousOperand = '';
-
-}
+} /*end of compute()*/
 
  getDisplayNumber(number) {
     const NumberAsString = number.toString();
     const integerDigits = parseFloat(NumberAsString.split('.')[0]);
     const decimalDigits = NumberAsString.split('.')[1];
     let integerDisplay;
-    const floatNumber = parseFloat(number);
-
+   
     if (isNaN(integerDigits)) {
         integerDisplay = '';
     } else {
         integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
-        if (DecimalDigits != null) {
-            return `${integerDisplay}.${decimalDigits}`
-        } else {
-            return integerDisplay;
-        }
     }
+    if (DecimalDigits != null) {
+       return `${integerDisplay}.${decimalDigits}`
+    } else {
+        return integerDisplay;
+      }
     
-    if (isNaN(floatNumber)) { /* do I need this? */
-        return '';
-    }
-    return floatNumber.toLocaleString('en');
+    
 } /* end of getDisplayNumber function */
 
 
@@ -115,7 +96,17 @@ compute() {
 }
 
 
-}
+} /*end of class Calculator */
+
+const numbers = document.querySelectorAll('operand');
+const operators = document.querySelectorAll('operator');
+const equals = document.querySelector('equals');
+const clear = document.querySelector('clear');
+const deleteButton = document.querySelector('delete');
+const PreviousOperandText = document.querySelector('previousOperand');
+const CurrentOperandText = document.querySelector('currentOperand');
+
+const calculator = new Calculator (PreviousOperandText, CurrentOperandText);
 
 numbers.forEach(button => {
     button.addEventListener('click', () => {
@@ -131,18 +122,17 @@ operators.forEach(button => {
     })
 });
 
-equalsButton.addEventListener('click', button => {
+equals.addEventListener('click', button => {
     calculator.compute();
     calculator.updateDisplay();
 });
 
-clearButton.addEventListener('click', button => {
+clear.addEventListener('click', button => {
     calculator.clear();
     calculator.updateDisplay();
 });
 
 deleteButton.addEventListener('click', button => {
-    calculator.deletee();
+    calculator.delete();
     calculator.updateDisplay();
 });
-const calculator = new Calculator (PreviousOperand_text, CurrentOperand_text);
