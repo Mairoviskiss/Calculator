@@ -55,7 +55,7 @@ button.hover {
     background-color: orange;
 }
 
-.clear, .percent {
+.clear, .percent, .delete {
     background-color: grey;
 }
 

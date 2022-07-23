@@ -6,34 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/script.js" defer></script>  
 </head>
 <body>
  <main id="calculator">
     <div id="container">
         <div id="display">
-            <div class="previousOperation"></div>
-            <div class="currentOperation"></div>
+            <div class="previousOperand"></div>
+            <div class="currentOperand"></div>
             0
         </div>
 
         <button type="button" class="clear" value="clear">CLEAR</button>
+        <button type="button" class="delete" value="delete">DEL</button>
         <button type="button" class="percent" value="percent">%</button>
         <button type="button" class="operator" value="/">/</button>
 
-        <button type="button" class="operator" value="*">*</button>
+        <button type="button" class="operand" value="7">7</button>
         <button type="button" class="operand" value="8">8</button>
         <button type="button" class="operand" value="9">9</button>
-        <button type="button" class="operand" value="7">7</button>
+        <button type="button" class="operator" value="*">*</button>
 
-        <button type="button" class="operator" value="--end">-</button>
+        <button type="button" class="operand" value="4">4</button>
         <button type="button" class="operand" value="5">5</button>
         <button type="button" class="operand" value="6">6</button>
-        <button type="button" class="operand" value="4">4</button>
+        <button type="button" class="operator" value="-">-</button>
 
-        <button type="button" class="operator" value="+">+</button>
+        <button type="button" class="operand" value="1">1</button>
         <button type="button" class="operand" value="2">2</button>
         <button type="button" class="operand" value="3">3</button>
-        <button type="button" class="operand" value="1">1</button>
+        <button type="button" class="operator" value="+">+</button>
 
         <button type="button" id="zero" class="operand" class="lastbuttons" value="0">0</button>
         <button type="button" class="decimal" class="lastbuttons" value=".">.</button>
@@ -43,6 +45,6 @@
     </div> <!--end of div container-->
 
  </main>
- <script src="./js/index.js"></script>   
+ 
 </body>
 </html>
