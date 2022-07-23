@@ -72,11 +72,11 @@
 }
 
 .previousOperand {
-    color: rgba(233, 27, 27, 0.75);
+    color: rgba(56, 52, 52, 0.75);
     font-size: 1.5rem;
 }
 
 .currentOperand {
-    color: rgb(88, 48, 126);
+    color: rgb(14, 10, 18);
     font-size: 2.5rem;
 }
