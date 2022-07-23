@@ -12,33 +12,33 @@
  <main id="calculator">
     <div id="container">
         <div id="display">
-            <div class="previousOperand"></div>
-            <div class="currentOperand"></div>
+            <div data-previous-operand class="previousOperand"></div>
+            <div data-current-operand class="currentOperand"></div>
         </div>
 
-        <button  class="clear" value="clear">CLEAR</button>
-        <button  class="delete" value="delete">DEL</button>
-        <button  class="percent" value="percent">%</button>
-        <button  class="operator" value="/">/</button>
+        <button data-all-clear class="clear" >CLEAR</button>
+        <button data-delete class="delete" >DEL</button>
+        <button data-operation class="percent" >%</button>
+        <button  class="operator">/</button>
 
-        <button  class="operand" value="7">7</button>
-        <button  class="operand" value="8">8</button>
-        <button  class="operand" value="9">9</button>
-        <button  class="operator" id="*" value="*">*</button>
+        <button  data-number class="operand" >7</button>
+        <button  data-number class="operand" >8</button>
+        <button  data-number class="operand" >9</button>
+        <button  data-operation class="operator" id="*" >*</button>
 
-        <button  class="operand" value="4">4</button>
-        <button  class="operand" value="5">5</button>
-        <button  class="operand" value="6">6</button>
-        <button  class="operator" id="-"value="-">-</button>
+        <button data-number class="operand" >4</button>
+        <button data-number class="operand" >5</button>
+        <button data-number class="operand" >6</button>
+        <button data-operation class="operator" id="-">-</button>
 
-        <button class="operand" value="1">1</button>
-        <button class="operand" value="2">2</button>
-        <button class="operand" value="3">3</button>
-        <button class="operator" id="+" value="+">+</button>
+        <button data-number class="operand" >1</button>
+        <button data-number class="operand" >2</button>
+        <button data-number class="operand" >3</button>
+        <button data-operation class="operator" id="+" >+</button>
 
-        <button id="zero" class="operand" class="lastbuttons" value="0">0</button>
-        <button class="decimal" class="lastbuttons" value=".">.</button>
-        <button class="equals" class="lastbuttons" value="=">=</button>
+        <button data-number id="zero" class="operand" class="lastbuttons" >0</button>
+        <button data-number class="decimal" class="lastbuttons">.</button>
+        <button data-equals class="equals" class="lastbuttons">=</button>
 
 
     </div> <!--end of div container-->

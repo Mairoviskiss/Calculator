@@ -1,7 +1,7 @@
 class Calculator {
-    constructor(PreviousOperand_text, CurrentOperand_text) {
-        this.PreviousOperand_text = PreviousOperand_text;
-        this.CurrentOperand_text = CurrentOperand_text;
+    constructor(PreviousOperandText, CurrentOperandText) {
+        this.PreviousOperandText = PreviousOperandText;
+        this.CurrentOperandText = CurrentOperandText;
         this.clear();
     }
 
@@ -18,32 +18,27 @@ class Calculator {
 }
 
 appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) {
-        return 
-    }
+    if (number === '.' && this.currentOperand.includes('.')) return 
     this.currentOperand = this.currentOperand.toString() + number.toString();
 }
 
 chooseOperation(operation) {
-     if (this.currentOperand === '') {
-     return 
-    }
+     if (this.currentOperand === '') return 
+    
      if (this.previousOperand !== '') {
             this.compute();
         }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = ''; 
-    
 }
 
 compute() {
     let result;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
-    if (isNaN(prev) || isNaN(current)) {
-        return
-    }
+    if (isNaN(prev) || isNaN(current)) return
+    
     switch (this.operation) {
         case '+':
             result = prev + current;
@@ -87,24 +82,23 @@ compute() {
 
 
  updateDisplay() {
-    this.CurrentOperand_text.innerText = this.getDisplayNumber(this.currentOperand);
+    this.CurrentOperandText.innerText = this.getDisplayNumber(this.currentOperand);
     if (this.operation != null) {
-        this.PreviousOperand_text.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        this.PreviousOperandText.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
     } else {
-        this.PreviousOperand_text.innerText='';
+        this.PreviousOperandText.innerText='';
     }
 }
 
-
 } /*end of class Calculator */
 
-const numbers = document.querySelectorAll('operand');
-const operators = document.querySelectorAll('operator');
-const equals = document.querySelector('equals');
-const clear = document.querySelector('clear');
-const deleteButton = document.querySelector('delete');
-const PreviousOperandText = document.querySelector('previousOperand');
-const CurrentOperandText = document.querySelector('currentOperand');
+const numbers = document.querySelectorAll('[data-number]');
+const operators = document.querySelectorAll('[data-operation]');
+const equals = document.querySelector('[data-equals]');
+const clear = document.querySelector('[data-all-clear]');
+const deleteButton = document.querySelector('[data-delete]');
+const PreviousOperandText = document.querySelector('[data-previous-operand]');
+const CurrentOperandText = document.querySelector('[data-current-operand]');
 
 const calculator = new Calculator (PreviousOperandText, CurrentOperandText);
 
